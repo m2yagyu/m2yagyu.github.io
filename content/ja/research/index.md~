@@ -1,0 +1,25 @@
+---
+title: 研究
+date: 2024-01-01
+type: landing
+sections:
+  - block: markdown
+    content:
+      title: 研究テーマ
+      text: |
+        ## マイクロテアリングモードの不安定化機構
+        ．．．
+
+        ## 核融合プラズマにおける電磁的乱流飽和機構
+        ．．．
+    design:
+      columns: '1'
+  - block: markdown
+    content:
+      title: 研究ノート
+      text: |
+        <!-- - <a href="/files/note1.pdf" target="_blank"></a> -->
+    design:
+      columns: '1'
+      css_class: research_section
+---

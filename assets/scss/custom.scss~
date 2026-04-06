@@ -1,0 +1,61 @@
+.navbar-brand {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.hero-title {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    //text-decoration: underline !important;
+}
+.hero-lead {
+    font-size: 1rem !important;
+    max-width: 90% !important;
+}
+
+.section-heading {
+    text-align: left !important;
+}
+.section-heading h1 {
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+h2 {
+    font-size: 1.0rem !important;
+    //font-weight: bold !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.article-title{
+    font-size: 0.9rem !important;
+}
+.article-title a{
+    pointer-events: none !important;
+    text-decoration: none !important;
+    color: inherit !important
+}
+
+.article-container h1{
+    font-size: 1rem !important;
+}
+
+.share-box{
+    display: none !important
+}
+
+.wg-people h2{
+    font-size: 1.2rem !important;
+}
+.people-widget .row {
+  flex-direction: column !important
+}
+
+.research_section ul {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.research_section h2 {
+  font-size: 1.1rem;
+}

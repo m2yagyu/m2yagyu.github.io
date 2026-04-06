@@ -1,0 +1,13 @@
+main:
+  - name: ホーム
+    url: /ja/
+    weight: 10
+  - name: メンバー
+    url: people
+    weight: 20
+  - name: 研究
+    url: research
+    weight: 30
+  - name: 連絡先
+    url: contact
+    weight: 40

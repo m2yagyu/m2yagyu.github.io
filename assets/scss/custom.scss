@@ -1,0 +1,172 @@
+// font changes of web title 
+.navbar-brand {
+  color: #918d40 !important;
+}
+
+.navbar-brand {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+a[data-target="#search"] {
+  display: none !important;
+}
+
+.hero-title {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    //text-decoration: underline !important;
+}
+.hero-lead {
+    font-size: 1rem !important;
+    max-width: 90% !important;
+}
+
+.section-heading {
+    text-align: left !important;
+}
+.section-heading h1 {
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+    color: #000000
+}
+h2 {
+    font-size: 1.0rem !important;
+    //font-weight: bold !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.article-title{
+    font-size: 0.9rem !important;
+}
+.article-title a{
+    pointer-events: none !important;
+    text-decoration: none !important;
+    color: inherit !important
+}
+
+.article-container h1{
+    font-size: 1rem !important;
+}
+
+.share-box{
+    display: none !important
+}
+
+.research_section ul {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.research_section h2 {
+  color: #00008b; 
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  border-bottom: 2px solid #00008b;
+}
+
+/* ===== Group headings (force left alignment) ===== */
+/* ===== Force ALL text in people widget to left ===== */
+.wg-people * {
+  text-align: left !important;
+}
+/* ===== Force left alignment for group headings ===== */
+.wg-people .section-heading.text-center {
+  text-align: left !important;
+}
+
+.wg-people .section-heading.text-center * {
+  text-align: left !important;
+}
+.wg-people .text-center {
+  text-align: left !important;
+}
+
+
+/* ===== Force vertical layout ===== */
+.wg-people .row {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.wg-people [class*="col-"] {
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+}
+
+/* ===== Name and role inline ===== */
+.wg-people .portrait-title {
+  text-align: left !important;
+}
+
+.wg-people .portrait-title h2,
+.wg-people .portrait-title h3 {
+  display: inline;
+}
+
+.wg-people .portrait-title h2 {
+  font-size: 1rem;
+}
+
+.wg-people .portrait-title h3 {
+  margin-left: 0.5em;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Add parentheses around role */
+.wg-people .portrait-title h3::before {
+  content: "(";
+}
+
+.wg-people .portrait-title h3::after {
+  content: ")";
+}
+
+/* Align items to the top (fix minor misalignment) */
+.wg-people .media {
+  align-items: flex-start !important;
+}
+
+/* Heading spacing */
+.wg-people .section-heading {
+  margin-bottom: 1.2rem !important;
+}
+
+/* Member spacing */
+.wg-people [class*="col-"] {
+  margin-bottom: 0.9rem;
+}
+
+.wg-people h2.mb-4 {
+  margin-bottom: 0.2rem !important;
+}
+
+.wg-people .portrait-title {
+  white-space: nowrap;
+}
+
+.wg-people .portrait-title a {
+  pointer-events: none;
+  text-decoration: none;
+  color: #1d50a2;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.wg-people .portrait-title a[href*="mitsuyoshi-yagyu"], 
+.wg-people .portrait-title a[href*="%E6%9F%B3%E7%94%9F"] {
+    pointer-events: auto;
+    font-weight: bold;
+}
+/* Kill the "Latest" widget for sure */
+
+.article-widget {
+  display: none !important;
+}
+
+
+.contact_section p {
+  font-size: 0.8rem;
+}
