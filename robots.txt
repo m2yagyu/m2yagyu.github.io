@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://m2yagyu.github.io/sitemap.xml
