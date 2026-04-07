@@ -16,15 +16,38 @@ a[data-target="#search"] {
   display: none !important;
 }
 
+.view-compact .article-title {
+  font-size: 0.8rem !important;
+}
+
+.view-compact .article-metadata {
+  font-size: 0.7rem !important;
+}
+
+.view-compact .article-card {
+  margin-bottom: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/*
 .hero-title {
-    font-size: 2rem !important;
-    font-weight: bold !important;
-    //text-decoration: underline !important;
+  position: absolute !important;
+  top: 20px !important;
+  left: 20px !important;
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  //text-decoration: underline !important;
 }
+
 .hero-lead {
-    font-size: 1rem !important;
-    max-width: 90% !important;
+  position: absolute !important;
+  top: 70px !important; 
+  left: 20px !important;
+  font-size: 1rem !important;
+  max-width: 90% !important;
+  font-size: 1rem !important;
 }
+*/
 
 .section-heading {
     text-align: left !important;

@@ -25,7 +25,7 @@ sections:
         #color: '#4a4580'
         text_color_light: true
       spacing:
-        padding: ['30px','70px','30px','0px']
+        padding: ['100px','80px','100px','0px']
         
   
   - block: collection
