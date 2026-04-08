@@ -8,9 +8,9 @@ sections:
   - block: hero
     content:
       title: |
-        Computational Science LAB
+        Computational Science lab
       text: |
-        Computational Science Lab is part of <a href="https://www.ndsu.ac.jp/department/information-design/" target="_blanck">the Faculty of Information and Data Science</a> at <a href="https://www.ndsu.ac.jp/english/index.html/" target="_blanck">Notre Dame Seishin University</a>.
+        Computational Science lab is part of <a href="https://www.ndsu.ac.jp/department/information-design/" target="_blanck">the Faculty of Information and Data Science</a> at <a href="https://www.ndsu.ac.jp/english/index.html/" target="_blanck">Notre Dame Seishin University</a>.
     design:
       background:
         image:
@@ -23,7 +23,7 @@ sections:
         #color: '#4a4580'
         text_color_light: true
       spacing:
-        padding: ['100px','80px','100px','0px']      
+        padding: ['50px','100px','50px','0px']      
         
   
   - block: collection

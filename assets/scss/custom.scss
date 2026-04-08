@@ -29,25 +29,18 @@ a[data-target="#search"] {
   padding-bottom: 0.5rem !important;
 }
 
-/*
+
 .hero-title {
-  position: absolute !important;
-  top: 20px !important;
-  left: 20px !important;
-  font-size: 2rem !important;
+  font-size: 1.8rem !important;
   font-weight: bold !important;
   //text-decoration: underline !important;
 }
 
 .hero-lead {
-  position: absolute !important;
-  top: 70px !important; 
-  left: 20px !important;
   font-size: 1rem !important;
   max-width: 90% !important;
-  font-size: 1rem !important;
 }
-*/
+
 
 .section-heading {
     text-align: left !important;
@@ -80,14 +73,17 @@ h2 {
 .share-box{
     display: none !important
 }
-
+.research_section p {
+  font-size: 0.95rem;
+  line-height: 1.0;
+}
 .research_section ul {
   font-size: 0.9rem;
   line-height: 1.6;
 }
 .research_section h2 {
   color: #00008b; 
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   font-weight: bold;
   margin-top: 1.5rem;
   border-bottom: 2px solid #00008b;
