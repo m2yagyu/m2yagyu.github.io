@@ -41,7 +41,19 @@ bio: My research interests ... .
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
-# social:
+social:
+  - icon: id-badge
+    icon_pack: fas
+    link: https://researchmap.jp/mitsu_yagyu
+  - icon: google-scholar
+    icon_pack: ai
+    link: https://scholar.google.co.jp/citations?user=jclmeusAAAAJ&hl=ja
+  - icon: researchgate
+    icon_pack: ai
+    link: https://www.researchgate.net/profile/Mitsuyoshi-Yagyu
+  - icon: orcid
+    icon_pack: ai
+    link: https://orcid.org/my-orcid?orcid=0000-0002-8290-3347
 #   - icon: envelope
 #     icon_pack: fas
 #     link: 'mailto:test@example.org'
