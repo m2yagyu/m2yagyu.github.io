@@ -1,3 +1,27 @@
+
+.navbar-nav .nav-link {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: #b400cc;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 80%;
+}
+.fa-search {
+  display: none !important;
+}
 // font changes of web title 
 .navbar-brand {
   color: #918d40 !important;
