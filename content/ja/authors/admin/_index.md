@@ -45,7 +45,7 @@ social:
     link: https://www.researchgate.net/profile/Mitsuyoshi-Yagyu
   - icon: orcid
     icon_pack: ai
-    link: https://orcid.org/0000-0002-8290-3347w
+    link: https://orcid.org/0000-0002-8290-3347
 #   - icon: envelope
 #     icon_pack: fas
 #     link: 'mailto:test@example.org'
