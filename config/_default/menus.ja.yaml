@@ -8,6 +8,9 @@ main:
   - name: 研究
     url: research
     weight: 30
+  - name: 講義
+    url: lecture
+    weight: 35
   - name: 連絡先
     url: contact
     weight: 40

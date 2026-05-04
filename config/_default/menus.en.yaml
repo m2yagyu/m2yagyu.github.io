@@ -8,6 +8,9 @@ main:
   - name: Research
     url: research
     weight: 30
+  - name: Lecture
+    url: lecture
+    weight: 35
   - name: Contact
     url: contact
     weight: 40
