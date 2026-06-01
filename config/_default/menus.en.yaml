@@ -2,9 +2,9 @@ main:
   - name: Home
     url: /en/
     weight: 10
-  - name: Member
-    url: people
-    weight: 20
+#  - name: Member
+#    url: people
+#    weight: 20
   - name: Research
     url: research
     weight: 30

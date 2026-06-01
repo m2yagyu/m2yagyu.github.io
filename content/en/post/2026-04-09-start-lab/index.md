@@ -1,5 +1,5 @@
 ---
-title: Two students have joined CSlab.
+title: CSlab activities is now in operation.
 date: 2026-04-09
 authors: []
 profile: false

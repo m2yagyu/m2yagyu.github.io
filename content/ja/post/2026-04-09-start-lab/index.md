@@ -1,5 +1,5 @@
 ---
-title: 2名の学生がCSlabへ配属されました．
+title: CSlabの活動が始まりました．
 date: 2026-04-09
 authors: []
 profile: false
