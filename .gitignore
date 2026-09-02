@@ -5,3 +5,11 @@
 /resources/
 public/
 assets/jsconfig.json
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# macOS
+.DS_Store
