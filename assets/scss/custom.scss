@@ -434,7 +434,7 @@ html[lang^="en"] .lecture_section ul {
 
 /* 研究室紹介ページの本文だけ一段小さく（研究・講義ページには影響させない） */
 .about_section p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 
@@ -578,4 +578,94 @@ html[lang^="en"] .lecture_section ul {
   font-size: 0.78em;
   font-weight: normal;
   opacity: 0.7;
+}
+
+
+/* =========================================================
+   ページ先頭の見出し（例:「CSlabについて」）
+   サイトの表示書体（丸ゴシック）とヘッダーの青で、
+   セクション見出しより一段上の階層であることを示す。
+   ========================================================= */
+
+.page_lead .section-heading h1 {
+  font-family: 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN',
+    'Hiragino Maru Gothic Pro', sans-serif;
+  font-size: 1.5rem !important;
+  color: #2a3f9e !important; // 白地とのコントラスト 9.4:1
+  letter-spacing: 0.03em;
+  // 他のセクション見出しと同じ影を付ける
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45) !important;
+}
+
+.page_lead .section-heading {
+  border-bottom: 2px solid rgba(42, 63, 158, 0.4);
+  padding-bottom: 0.5rem;
+}
+
+
+/* =========================================================
+   タブレット幅（768〜991px）のヒーロー
+   この帯では画像と文字が横並び（col-md-6）のままなので、
+   文字が約350pxの半カラムに押し込まれて窮屈になっていた。
+   文字を全幅に広げ、画像は背後に絶対配置して重ねる。
+   折り返しは有効なままなので横スクロールは発生しない。
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .wg-hero .row {
+    position: relative;
+  }
+
+  // 文字側のカラムを全幅にし、画像より前面へ
+  .wg-hero .row > .col-md-6:not(.hero-media) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  // 画像は右側に背景として置く
+  .wg-hero .hero-media {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 45%;
+    max-width: 45%;
+    flex: none;
+    z-index: 0;
+    margin: 0;
+  }
+}
+
+
+/* =========================================================
+   スマートフォン幅（767px 以下）のヒーロー
+   既定では画像と文字が縦積みになるが、画像を背後に絶対配置して
+   文字を重ねる。画面が狭く絵柄と文字が全面的に重なるため、
+   画像の不透明度を落として文字の可読性を確保する。
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+  .wg-hero .row {
+    position: relative;
+  }
+
+  .wg-hero .row > .col-12:not(.hero-media) {
+    position: relative;
+    z-index: 2;
+  }
+
+  .wg-hero .hero-media {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 70%;
+    max-width: 70%;
+    flex: none;
+    z-index: 0;
+    margin: 0;
+    opacity: 0.5; // 文字が乗るぶん控えめに
+  }
 }

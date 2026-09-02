@@ -25,6 +25,33 @@ sections:
         padding: ['18px','0','18px','0']
         
   
+  - block: markdown
+    content:
+      title:
+      text: |
+        <div class="quicklinks">
+          <a class="quicklink" href="/ja/about/">
+            <span class="quicklink-icon"><i class="fas fa-microscope"></i></span>
+            <span class="quicklink-label">CSlab紹介</span>
+          </a>
+          <a class="quicklink" href="/ja/research/">
+            <span class="quicklink-icon"><i class="fas fa-flask"></i></span>
+            <span class="quicklink-label">研究内容</span>
+          </a>
+          <a class="quicklink" href="/ja/people/">
+            <span class="quicklink-icon"><i class="fas fa-users"></i></span>
+            <span class="quicklink-label">メンバー</span>
+          </a>
+        </div>
+    design:
+      columns: '1'
+      background:
+        # ヘッダーの青紫に寄せた薄いグレー。白一色の中で帯として区切る
+        color: '#f5f6fb'
+      spacing:
+        # 下を詰めて、直後の News と一つの帯に見せる
+        padding: ['55px','0','25px','0']
+  
   - block: collection
     content:
       title: News
@@ -47,37 +74,10 @@ sections:
       view: compact #card
       columns: '1'
       background:
-        # ヘッダーの青紫に寄せた薄いグレー。白一色の中で帯として区切る
-        color: '#f5f6fb'
+        color: '#f5f6fb'   # アイコン群と同色。上を詰めて同じ帯として続ける
       spacing:
-        # 下を詰めて、直後のアイコン群と一つの帯に見せる
-        padding: ['60px','0','20px','0']
+        padding: ['0','0','55px','0']
 
-  - block: markdown
-    content:
-      title:
-      text: |
-        <div class="quicklinks">
-          <a class="quicklink" href="/ja/about/">
-            <span class="quicklink-icon"><i class="fas fa-microscope"></i></span>
-            <span class="quicklink-label">CSlab紹介</span>
-          </a>
-          <a class="quicklink" href="/ja/research/">
-            <span class="quicklink-icon"><i class="fas fa-flask"></i></span>
-            <span class="quicklink-label">研究内容</span>
-          </a>
-          <a class="quicklink" href="/ja/people/">
-            <span class="quicklink-icon"><i class="fas fa-users"></i></span>
-            <span class="quicklink-label">メンバー</span>
-          </a>
-        </div>
-    design:
-      columns: '1'
-      background:
-        color: '#f5f6fb'   # News と同色。上を詰めて同じ帯として続ける
-      spacing:
-        padding: ['0','0','60px','0']
-  
   # - block: markdown
   #   content:
   #     title:
