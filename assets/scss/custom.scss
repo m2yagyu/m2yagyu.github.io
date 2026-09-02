@@ -28,7 +28,11 @@
 }
 
 .navbar-brand {
-    font-style: italic;
+    // ヒーロー見出しと同じ丸ゴシック
+    font-family: 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN', 'Hiragino Maru Gothic Pro', sans-serif;
+    font-weight: 700;
+    // 丸ゴシックは斜体字形を持たず、機械的な傾きが目立つため正体にする
+    font-style: normal;
     font-size: 1.5rem;
 }
 
@@ -55,6 +59,8 @@ a[data-target="#search"] {
 
 
 .hero-title {
+  // 丸ゴシック。Web フォント未読込の環境では macOS のヒラギノ丸ゴにフォールバックする
+  font-family: 'M PLUS Rounded 1c', 'Hiragino Maru Gothic ProN', 'Hiragino Maru Gothic Pro', sans-serif;
   font-size: 1.8rem !important;
   font-weight: bold !important;
   //text-decoration: underline !important;
@@ -97,20 +103,44 @@ h2 {
 .share-box{
     display: none !important
 }
-.research_section p {
+.research_section p,
+.lecture_section p {
   font-size: 0.95rem;
-  line-height: 1.0;
+  // 元の 1.0 は行間ゼロで詰まりすぎ。テーマ基準(1.65)よりわずかに広い 1.7 にする。
+  line-height: 1.7;
+  margin-bottom: 1.2em; // 段落どうしの間も確保
 }
-.research_section ul {
+.research_section ul,
+.lecture_section ul {
   font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+// 欧文は和文よりも字面が小さく、同じ行間でも間延びして見えるため一段詰める
+html[lang^="en"] .research_section p,
+html[lang^="en"] .research_section ul,
+html[lang^="en"] .lecture_section p,
+html[lang^="en"] .lecture_section ul {
   line-height: 1.6;
 }
-.research_section h2 {
+.research_section li,
+.lecture_section li {
+  margin-bottom: 0.3em;
+}
+.research_section h2,
+.lecture_section h2 {
   color: #00008b; 
   font-size: 0.9rem;
   font-weight: bold;
-  margin-top: 1.5rem;
+  margin-top: 1.5rem; // 前の段落との間隔
   border-bottom: 2px solid #00008b;
+}
+
+// 本文の先頭に来る h2 は、上のセクション見出しとの間が空きすぎるため
+// 上マージンを打ち消す（導入文を置かないページ用）
+.research_section h2:first-child,
+.lecture_section h2:first-child {
+  margin-top: 0;
 }
 
 /* ===== Group headings (force left alignment) ===== */
@@ -237,4 +267,315 @@ h2 {
   font-size: 0.8rem !important;
   line-height: 1.2 !important;
   color: #333333 !important;
+}
+
+/* =========================================================
+   Hero（トップページのヘッダー）
+   画像は前景に小さく置き、正方形の輪郭を背景へ溶かし込む。
+   背景は画像の外周色（実測: 概ね #566ac8）に合わせた
+   グラデーションで、_index.md 側の gradient_start/end と対。
+   ========================================================= */
+
+// 文字が背景に沈まないように影を付ける
+.wg-hero.dark .hero-title,
+.wg-hero.dark .hero-lead {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+// 画像は縦中央ではなく上寄せにする（既定は align-items: center）
+.hero-media {
+  align-items: flex-start;
+}
+
+// ヒーロー画像。
+// 元画像は正方形なので、そのまま拡大するとヘッダーが高くなってしまう。
+// height を固定して object-fit: cover で横長に切り抜き、
+// 「絵柄は大きく、ヘッダーは低く」を両立させる。
+.hero-media img {
+  width: 100%;
+  max-width: 360px; // 絵柄の見た目の大きさ
+  height: 200px; // ヘッダーの高さを決めるのはここ
+  object-fit: cover;
+  margin-top: -6px;
+
+  // 縁をフェードさせて背景に埋め込む。切り抜きが横長なので楕円で。
+  -webkit-mask-image: radial-gradient(ellipse closest-side, #000 60%, rgba(0, 0, 0, 0) 96%);
+  mask-image: radial-gradient(ellipse closest-side, #000 60%, rgba(0, 0, 0, 0) 96%);
+}
+
+// 背景画像方式に戻した場合のみ効く。文字側だけを暗く落とすスクリム。
+.wg-hero .home-section-bg.bg-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.34) 42%,
+    rgba(0, 0, 0, 0) 78%
+  );
+}
+
+
+/* =========================================================
+   ページ全体の幅
+   Bootstrap 既定（大画面で 1140px）より狭くして中央に寄せる。
+   ナビゲーションバーも同じ .container を使うため、
+   ヘッダーから本文まで左右の基準線が揃う。
+   ========================================================= */
+
+.container,
+.container-xl {
+  // .container-xl はナビゲーションバー（CSlab のロゴとメニュー）が使う
+  max-width: 960px;
+}
+
+
+/* =========================================================
+   ヒーロー本文を1行に流す
+   カラム幅（960px の半分）を超えて画像の上まで伸ばすため、
+   折り返しを止めて max-width の制限を外し、画像より前面に置く。
+   画面が狭いときは横スクロールが出るので lg 以上に限定する。
+   コンテナの実効幅は約 930px、基準フォントは 21px。
+   ========================================================= */
+
+@media (min-width: 992px) {
+  .wg-hero .hero-lead {
+    max-width: none !important;
+    position: relative;
+    z-index: 2; // 画像（後続カラム）より前面に
+  }
+
+  // 所属を書いた1文だけ折り返さず、カラム幅を超えて画像の上まで流す。
+  // 追加した紹介文は長いので、こちらは通常どおり折り返させる。
+  .wg-hero .hero-lead .lead-affiliation {
+    white-space: nowrap;
+  }
+
+  // 日本語: 全角45文字。21px のままだと約 956px ではみ出す。
+  html[lang^="ja"] .wg-hero .hero-lead {
+    font-size: 0.9rem !important; // 約 19px → 約 860px
+  }
+
+  // 英語: 114文字。欧文は字幅が狭いぶん文字数が多く、
+  // 21px では 1200px を超えるため日本語より強く詰める必要がある。
+  html[lang^="en"] .wg-hero .hero-lead {
+    // 実測字幅では 0.85rem (911px) まで入るが、フォント差の余裕を見て 0.8rem。
+    font-size: 0.8rem !important; // 約 17px → 約 857px
+  }
+
+  // 見出しもカラム幅を超えて1行に流す（"Computational Science lab" は約450px）
+  .wg-hero .hero-title {
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+
+/* =========================================================
+   ヒーロー見出しの強調（ja: 計算科学 / en: C, S, lab）
+   ナビゲーションの「CSlab」(#918d40) と同じ色相 57° の金系。
+   ブランド色そのままでは背景とのコントラストが 1.7:1 しかなく
+   読めないため、色相・彩度は保ったまま明度だけ上げている
+   （明度 41% → 80%、コントラスト約 4.5:1）。
+   ========================================================= */
+
+.hero-title .accent {
+  color: #c9c573; // 明度 62%。CSlab (#918d40) に一段近づけた金
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  // 暗い色に明るい発光を乗せると濁るので、輪郭を締める影だけにする
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* =========================================================
+   ヒーローの紹介文（所属の1行の下に続く段落）
+   ========================================================= */
+
+.wg-hero .hero-lead .lead-about {
+  display: block; // 所属の行とは別行にする
+  margin-top: 0.7em;
+  max-width: 620px; // 狭い画面では折り返して読ませる
+}
+
+// 広い画面では自動折り返しを止め、<br> を入れた位置だけで改行する。
+// 実測幅は ja 888px / 340px、en 677px / 439px でコンテナ（約920px）に収まる。
+@media (min-width: 992px) {
+  .wg-hero .hero-lead .lead-about {
+    white-space: nowrap;
+    max-width: none;
+  }
+}
+
+// 「こちら」など本文中のリンクを目立たせる
+.wg-hero .hero-lead .lead-about a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
+
+
+/* メールアドレスの「-at-」表記についての注意書き */
+.mail-note {
+  display: inline-block;
+  margin-top: 0.2em;
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+
+/* 研究室紹介ページの本文だけ一段小さく（研究・講義ページには影響させない） */
+.about_section p {
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   トップページの導線アイコン（CSlab紹介 / 研究内容 / メンバー）
+   テーマの features ブロックはリンクを張れないため、
+   markdown ブロック内に自前のカードを置いている。
+   色はヘッダーの背景グラデーション #3f5cc0 → #8a6bd8 に合わせる。
+   ========================================================= */
+
+.quicklinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+
+.quicklink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 118px;
+  padding: 0.9rem 0.4rem;
+  border: 1px solid rgba(63, 92, 176, 0.3);
+  border-radius: 12px;
+  background: #ffffff;
+  color: #3f5cc0; // 白いカード上でコントラスト 6.0:1
+  text-decoration: none !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.quicklink:hover,
+.quicklink:focus {
+  // ヘッダーと同じグラデーションで塗る
+  background: linear-gradient(100deg, #3f5cc0, #8a6bd8);
+  border-color: transparent;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(63, 92, 176, 0.28);
+}
+
+.quicklink-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.quicklink-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   News をスクロールする窓にする
+   記事一覧は .wg-collection の中の .col-12（見出し以外）に入る。
+   高さを固定して内部スクロールにし、白いカードとして切り出す。
+   ========================================================= */
+
+.wg-collection .col-12:not(.section-heading) {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #e3e5ef;
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+
+  // Firefox
+  scrollbar-width: thin;
+  scrollbar-color: #c9cde0 transparent;
+}
+
+// WebKit 系のスクロールバー
+.wg-collection .col-12:not(.section-heading)::-webkit-scrollbar {
+  width: 8px;
+}
+
+.wg-collection .col-12:not(.section-heading)::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wg-collection .col-12:not(.section-heading)::-webkit-scrollbar-thumb {
+  background: #c9cde0;
+  border-radius: 4px;
+}
+
+.wg-collection .col-12:not(.section-heading)::-webkit-scrollbar-thumb:hover {
+  background: #aeb4cd;
+}
+
+// 窓の中では最後の項目の余白を詰める
+.wg-collection .stream-item:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
+/* News の各項目で、日付をタイトルの前に出す
+   （テンプレートは タイトル → 日付 の順で出力されるため、
+     flex の order で表示順だけ入れ替える） */
+.view-compact .media-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.view-compact .media-body .stream-meta {
+  order: -1;
+  margin-bottom: 0.15rem;
+}
+
+
+/* News の記事どうしの間隔を詰める
+   （テーマ既定は .media.stream-item:not(:last-child) の margin-bottom: 2rem） */
+.wg-collection .media.stream-item:not(:last-child) {
+  margin-bottom: 0.7rem;
+}
+
+
+/* News の日付を黒にする（テーマ既定は rgba(0,0,0,.54) のグレー） */
+.wg-collection .article-metadata,
+.wg-collection .article-date {
+  color: #000000;
+}
+
+
+/* 記事タイトルのリンクは既定で無効化しているが（.article-title a）、
+   外部リンク（external_link）を設定した記事だけはクリックできるようにする */
+.article-title a[href^="http"] {
+  pointer-events: auto !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+
+
+/* テーマに添える状態注記（例:「…の評価（卒論テーマ予定）」）
+   テーマ名の一部に見えないよう、小さく細く薄くする */
+.status-note {
+  margin-left: 0.4em;
+  font-size: 0.78em;
+  font-weight: normal;
+  opacity: 0.7;
 }
