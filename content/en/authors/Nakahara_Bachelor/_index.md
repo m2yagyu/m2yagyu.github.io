@@ -15,5 +15,5 @@ education: []
 social: []
 email: ''
 user_groups:
-  - Students
+  - Undergraduate Students
 ---

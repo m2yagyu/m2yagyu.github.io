@@ -6,6 +6,9 @@ title: 柳生 光義
 first_name: 光義
 last_name: 柳生
 
+# Reading (kana) used to sort the People block in 五十音順
+last_name_kana: やぎゅう
+
 # Is this the primary user of the site?
 superuser: false #true
 

@@ -7,7 +7,7 @@ first_name: Mitsuyoshi
 last_name: Yagyu
 
 # Is this the primary user of the site?
-superuser: false !true
+superuser: false #true
 
 # Role/position
 role: Assistant Professor

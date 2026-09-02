@@ -16,7 +16,8 @@ sections:
         ## TEL
           086-250-7167
         ## Email
-          myagyu@m.ndsu.ac.jp
+          myagyu-at-m.ndsu.ac.jp<br>
+          <span class="mail-note">送信の際は「-at-」を「@」に置き換えてください．</span>
     design:
       columns: '1'
       css_class: contact_section

@@ -11,6 +11,8 @@ en:
   #title: Computational Science Lab
   params:
     description: "Computational Science Lab"
+    locale:
+      date_format: 'January 2, 2006'   # 例: May 26, 2026
 
 ja:
   languageCode: ja
@@ -20,6 +22,8 @@ ja:
   #title: 計算科学研究室
   params:
     description: "計算科学研究室"
+    locale:
+      date_format: '2006年01月02日'   # 例: 2026年05月26日
 
 
 # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.

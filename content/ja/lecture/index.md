@@ -5,18 +5,12 @@ type: landing
 sections:
   - block: markdown
     content:
-      title: test
+      title: 担当講義
       text: |
-        test...
+        - ICTリテラシ（2024年-）
+        - 情報メディア演習（2025年-）
+        - 情報学I（2026年-）
     design:
       columns: '1'
       css_class: lecture_section
-  # - block: markdown
-  #   content:
-  #     title: 研究ノート
-  #     text: |
-  #       <!-- - <a href="/files/note1.pdf" target="_blank"></a> -->
-  #   design:
-  #     columns: '1'
-  #     css_class: research_section
 ---

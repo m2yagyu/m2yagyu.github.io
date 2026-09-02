@@ -5,18 +5,12 @@ type: landing
 sections:
   - block: markdown
     content:
-      title: test
+      title: Courses Taught
       text: |
-        test...
+        - ICT Literacy (since 2024)
+        - Information Media Practice (since 2025)
+        - Informatics I (since 2026)
     design:
       columns: '1'
-      css_class: lecture_section      
-  # - block: markdown
-  #   content:
-  #     title: Research Notes
-  #     text: |
-  #       <!-- - <a href="/files/note1.pdf" target="_blank">Research Note 1</a> -->
-  #   design:
-  #     columns: '1'
-  #     css_class: research-section
+      css_class: lecture_section
 ---
