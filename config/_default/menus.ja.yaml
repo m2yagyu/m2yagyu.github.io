@@ -14,3 +14,6 @@ main:
   - name: 連絡先
     url: contact
     weight: 40
+  - name: 学内限定
+    url: internal
+    weight: 45

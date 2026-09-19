@@ -116,3 +116,4 @@ publications:
 
 show_language_toggle: true
 plugins_css: ['custom']
+plugins_js: ['custom']

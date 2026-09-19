@@ -14,3 +14,6 @@ main:
   - name: Contact
     url: contact
     weight: 40
+  - name: Internal
+    url: internal
+    weight: 45

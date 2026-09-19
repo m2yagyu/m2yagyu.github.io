@@ -42,6 +42,10 @@ sections:
             <span class="quicklink-icon"><i class="fas fa-users"></i></span>
             <span class="quicklink-label">Member</span>
           </a>
+          <a class="quicklink" href="/en/internal/">
+            <span class="quicklink-icon"><i class="fas fa-lock"></i></span>
+            <span class="quicklink-label">Internal</span>
+          </a>
         </div>
     design:
       columns: '1'

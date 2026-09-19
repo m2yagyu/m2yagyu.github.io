@@ -42,6 +42,10 @@ sections:
             <span class="quicklink-icon"><i class="fas fa-users"></i></span>
             <span class="quicklink-label">メンバー</span>
           </a>
+          <a class="quicklink" href="/ja/internal/">
+            <span class="quicklink-icon"><i class="fas fa-lock"></i></span>
+            <span class="quicklink-label">学内限定</span>
+          </a>
         </div>
     design:
       columns: '1'
