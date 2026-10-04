@@ -38,7 +38,7 @@ sections:
 
         To begin with, study with the aim of being able to complete <a href="/lab_doc/Report01.pdf" target="_blank" rel="noopener">Assignment 1</a> in the first term of the third year.
 
-        Students who are considering joining the group are referred to our <a href="/lab_doc/research_intro_v2.0.pdf" target="_blank" rel="noopener">research introduction</a> (in Japanese).
+        Students who are considering joining the group are referred to our <a href="/lab_doc/research_intro.pdf" target="_blank" rel="noopener">research introduction</a> (in Japanese).
     design:
       columns: '1'
       css_class: research_section about_section

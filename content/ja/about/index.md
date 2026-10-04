@@ -38,7 +38,7 @@ sections:
 
         まずは3年1期に<a href="/lab_doc/Report01.pdf" target="_blank" rel="noopener">こちらの課題1</a>ができるようになることを目指して学習しましょう．
 
-        研究室志望の学生は<a href="/lab_doc/research_intro_v2.0.pdf" target="_blank" rel="noopener">研究室紹介</a>を参照ください．
+        研究室志望の学生は<a href="/lab_doc/research_intro.pdf" target="_blank" rel="noopener">研究室紹介</a>を参照ください．
     design:
       columns: '1'
       css_class: research_section about_section
