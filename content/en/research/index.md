@@ -31,6 +31,10 @@ sections:
         - <a href="/study_notes/note_nonlinear_microtearing.pdf" target="_blank" rel="noopener">Quasi-linear analysis of the microtearing instability</a>
         - <a href="/study_notes/note_heating_equation_kinetic.pdf" target="_blank" rel="noopener">Derivation of the heating equation in the kinetic model</a>
         - <a href="/study_notes/note_drake1977_conductivity_sigma.pdf" target="_blank" rel="noopener">Linear analysis of the collisional microtearing instability (handwritten)</a>
+
+        ## Traffic Flow
+
+        - <a href="/study_notes/note_mixed_traffic_nasch.pdf" target="_blank" rel="noopener">Mixed autonomous/human traffic in the Nagel–Schreckenberg model</a>
     design:
       columns: '1'
       css_class: research_section

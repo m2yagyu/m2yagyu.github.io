@@ -32,6 +32,10 @@ sections:
         - <a href="/study_notes/note_nonlinear_microtearing.pdf" target="_blank" rel="noopener">マイクロテアリング不安定性の準線形解析</a>
         - <a href="/study_notes/note_heating_equation_kinetic.pdf" target="_blank" rel="noopener">運動論モデルの加熱方程式の導出</a>
         - <a href="/study_notes/note_drake1977_conductivity_sigma.pdf" target="_blank" rel="noopener">衝突性マイクロテアリング不安定性の線形解析（手書き）</a>
+
+        ## 交通流関係
+
+        - <a href="/study_notes/note_mixed_traffic_nasch.pdf" target="_blank" rel="noopener">自動運転車・手動運転車の混合交通流（Nagel–Schreckenbergモデル）</a>
     design:
       columns: '1'
       css_class: research_section
