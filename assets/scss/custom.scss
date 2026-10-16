@@ -437,6 +437,14 @@ html[lang^="en"] .lecture_section ul {
   font-size: 0.85rem;
 }
 
+/* シミュレーション例ページは説明文が長いので，研究室紹介ページよりさらに一段小さく */
+.sim_examples_section p {
+  font-size: 0.8rem;
+}
+.sim_examples_section ul {
+  font-size: 0.85rem;
+}
+
 
 /* =========================================================
    トップページの導線アイコン（CSlab紹介 / 研究内容 / メンバー）
@@ -578,6 +586,13 @@ html[lang^="en"] .lecture_section ul {
   font-size: 0.78em;
   font-weight: normal;
   opacity: 0.7;
+}
+
+/* 研究ページの小見出しの横に置く「詳細」リンク（シミュレーション例ページへ） */
+.heading-detail {
+  margin-left: 0.6em;
+  font-size: 0.8em;
+  font-weight: normal;
 }
 
 

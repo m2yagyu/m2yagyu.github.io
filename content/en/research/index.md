@@ -14,10 +14,10 @@ sections:
         ## Simulation code development
         - Development of a fast solution method for plasma instability eigenvalue problems with singular structures using neural networks
 
-        ## Traffic flow / Fire / Evacuation
+        ## Traffic flow / Fire / Evacuation<a class="heading-detail" href="/en/research-examples/">▶ Simulation Examples</a>
         - Cellular-automaton analysis of mixed autonomous and human-driven traffic flow
-        - Simulation of smoke transport in a fire and evaluation of the available safe egress time<span class="status-note">(planned undergraduate thesis topic)</span>
-        - Acceleration of evacuation simulation with an AI surrogate model<span class="status-note">(planned undergraduate thesis topic)</span>
+        - Simulation of smoke transport in a fire and evaluation of the available safe egress time
+        - Acceleration of evacuation simulation with an AI surrogate model
     design:
       columns: '1'
       css_class: research_section      
