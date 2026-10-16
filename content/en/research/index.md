@@ -11,10 +11,10 @@ sections:
         - Detailed analysis of the destabilization mechanism of the microtearing modes
         - Detailed analysis of the saturation mechanism of electromagnetic turbulence
 
-        ## Simulation code development
+        ## <a href="/en/ai-simulation/">Simulation code development</a>
         - Development of a fast solution method for plasma instability eigenvalue problems with singular structures using neural networks
 
-        ## Traffic flow / Fire / Evacuation<a class="heading-detail" href="/en/research-examples/">▶ Simulation Examples</a>
+        ## <a href="/en/research-examples/">Traffic flow / Fire / Evacuation</a>
         - Cellular-automaton analysis of mixed autonomous and human-driven traffic flow
         - Simulation of smoke transport in a fire and evaluation of the available safe egress time
         - Acceleration of evacuation simulation with an AI surrogate model

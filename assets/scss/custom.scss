@@ -135,6 +135,21 @@ html[lang^="en"] .lecture_section ul {
   margin-top: 1.5rem; // 前の段落との間隔
   border-bottom: 2px solid #00008b;
 }
+// 見出しそのものを詳細ページへのリンクにする場合：色は他の見出しと揃え，
+// 末尾の矢印と hover 時の下線でリンクだとわかるようにする
+.research_section h2 a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.research_section h2 a::after {
+  content: "\25B8"; // ▸
+  margin-left: 0.4em;
+  font-size: 0.85em;
+  opacity: 0.6;
+}
+.research_section h2 a:hover {
+  text-decoration: underline !important;
+}
 
 // 本文の先頭に来る h2 は、上のセクション見出しとの間が空きすぎるため
 // 上マージンを打ち消す（導入文を置かないページ用）
@@ -441,8 +456,11 @@ html[lang^="en"] .lecture_section ul {
 .sim_examples_section p {
   font-size: 0.8rem;
 }
-.sim_examples_section ul {
-  font-size: 0.85rem;
+// 番号付きリスト（ol）は他で指定がなくテーマ既定の大きさになるため，ul と合わせて本文と同じ大きさに揃える
+.sim_examples_section ul,
+.sim_examples_section ol {
+  font-size: 0.8rem;
+  line-height: 1.7;
 }
 
 
@@ -586,13 +604,6 @@ html[lang^="en"] .lecture_section ul {
   font-size: 0.78em;
   font-weight: normal;
   opacity: 0.7;
-}
-
-/* 研究ページの小見出しの横に置く「詳細」リンク（シミュレーション例ページへ） */
-.heading-detail {
-  margin-left: 0.6em;
-  font-size: 0.8em;
-  font-weight: normal;
 }
 
 
