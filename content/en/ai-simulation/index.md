@@ -70,12 +70,55 @@ sections:
 
   - block: markdown
     content:
+      title: "Extension to Two-Dimensional Flow: Double Shear Layer"
+      text: |
+        Next, we have applied the PINN to the Navier–Stokes equations for a two-dimensional incompressible fluid. Using the vorticity $\omega$ and the stream function $\psi$, the equations are written as
+
+        $$
+        \frac{\partial \omega}{\partial t} + u\frac{\partial \omega}{\partial x} + v\frac{\partial \omega}{\partial y} = \nu \nabla^2 \omega, \qquad \nabla^2 \psi = -\omega,
+        $$
+
+        where the velocity is given by $u = \partial \psi / \partial y$ and $v = -\partial \psi / \partial x$. As the test problem, we have chosen the double shear layer, in which two thin shear layers roll up into vortices through the Kelvin–Helmholtz instability. In the commonly used Taylor–Green vortex, the advection term $(\boldsymbol{u}\cdot\nabla)\omega$ vanishes identically, so the nonlinear term cannot be verified. In the double shear layer, the advection term reaches about four times the viscous term, and the nonlinearity dominates the flow.
+
+        **Problem setting**
+
+        - Computational domain and time: $x, y \in [0, 2\pi]$ (doubly periodic), $t \in [0, 10]$
+        - Initial condition: two shear layers of thickness $\rho = \pi/15$ with a perturbation $\delta \sin x$ of amplitude $\delta = 0.05$
+        - Physical parameter: $\nu = 0.01$ (Reynolds number $Re = 100$)
+
+        The reference solution is obtained with a $256^2$ Fourier–Galerkin spectral method. In the PINN, the inputs are embedded into trigonometric functions so that the periodic boundary conditions are satisfied exactly, and we use time marching, in which the time interval is divided into ten windows trained sequentially, together with causal weighting [2]. Note that the results below are from a pilot calculation with a relatively small network.
+
+        **Simulation results**
+
+        The PINN reproduces the waviness of the shear layers ($t = 2$–$4$), their roll-up ($t = 6$), and the merger into two vortices ($t = 8$–$10$) well in terms of shape (center of the animation below).
+
+        <img src="/files/ai-simulation/dsl_vorticity_animation.webp" alt="Time evolution of the vorticity in the double shear layer. Left: numerical solution, center: PINN, right: difference" style="width:100%; height:auto;">
+
+        <small>Time evolution of the vorticity. Left: numerical solution, center: PINN, right: difference. The time and the relative error of the vorticity ($L^2$ norm) with respect to the numerical solution are shown at the top.</small>
+
+        The relative error of the vorticity, however, increases with time and reaches a maximum of 26% at $t \approx 7.6$. Compared with the diffusion-only solution without the advection term (an error of 91% at $t = 10$), the error is much smaller (21%), which shows that the PINN captures the nonlinear advection.
+
+        **Remaining issues**
+
+        - **A small residual does not guarantee an accurate solution.** Although the equation residual decreases to about $10^{-4}$, the vorticity error reaches 26%. For problems without a reference solution, the correctness of the solution cannot be judged from the residual alone.
+        - **Errors accumulate in time.** Since the initial condition of each window is the prediction of the previous window, the error increases by about 2% per window.
+        - **The vortex positions shift.** The difference field (right panel of the animation) appears as pairs of positive and negative values at the edges of the vortices; the shapes of the structures agree, but their positions are slightly shifted.
+        - **Integrated quantities alone are insufficient for verification.** At $t = 10$, the errors in the energy and the enstrophy are about 1%, whereas the error in the vorticity field is 21%.
+        - **The computational cost is high.** The same calculation takes about 46 times longer than the spectral method (serial equivalent), and the error is more than six orders of magnitude larger.
+    design:
+      columns: '1'
+      css_class: research_section about_section sim_examples_section
+      spacing:
+        padding: ['15px','0','40px','0']
+
+  - block: markdown
+    content:
       title: Future Prospects
       text: |
+        - For the double shear layer, we will investigate how much the error decreases in a production run with a larger network, and we will improve the transfer between windows.
+        - We will consider applications in which the advantages of PINNs can be exploited, such as inverse problems of estimating the viscosity and other parameters from sparse observations.
         - We are considering an extension to magnetohydrodynamics that includes electromagnetic effects.
         - We aim to solve eigenvalue problems involving magnetic field discontinuities at high speed.
-          - Solving microscopic phenomena with magnetic field discontinuities on a computer requires high spatial resolution, which makes it a challenging problem in computational science.
-          - If acceleration by AI is realized, a wide parameter survey becomes possible.
     design:
       columns: '1'
       css_class: research_section about_section sim_examples_section
@@ -87,6 +130,7 @@ sections:
       title: References
       text: |
         1. <a href="https://doi.org/10.1016/j.jcp.2018.10.045" target="_blank" rel="noopener">M. Raissi <em>et al.</em>, J. Comput. Phys. 378 (2019)</a>
+        2. <a href="https://doi.org/10.1016/j.cma.2024.116813" target="_blank" rel="noopener">S. Wang <em>et al.</em>, Comput. Methods Appl. Mech. Eng. 421 (2024)</a>
     design:
       columns: '1'
       css_class: research_section about_section sim_examples_section

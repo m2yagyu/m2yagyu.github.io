@@ -38,7 +38,12 @@ sections:
 
         まずは3年1期に<a href="/lab_doc/Report01.pdf" target="_blank" rel="noopener">こちらの課題1</a>ができるようになることを目指して学習しましょう．
 
-        研究室志望の学生はこちらの<a href="/ja/research-examples/">シミュレーション例</a>を参照ください．
+        研究室で取り組んでいる研究例を，以下のページで紹介しています．
+
+        - <a href="/ja/ai-simulation/">AI を用いた物理シミュレーション手法の開発</a>
+        - <a href="/ja/research-examples/">火災・避難・交通流のシミュレーション例</a>
+
+        詳細は<a href="/ja/research/">研究内容</a>を参照してください．
     design:
       columns: '1'
       css_class: research_section about_section

@@ -8,7 +8,7 @@ sections:
       title: Research Topics
       text: |
         ## Plasma physics
-        - Detailed analysis of the destabilization mechanism of the microtearing modes
+        - <a href="/en/microtearing/">Detailed analysis of the destabilization mechanism of the microtearing modes</a>
         - Detailed analysis of the saturation mechanism of electromagnetic turbulence
 
         ## <a href="/en/ai-simulation/">Simulation code development</a>

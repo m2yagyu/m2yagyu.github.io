@@ -462,6 +462,17 @@ html[lang^="en"] .lecture_section ul {
   font-size: 0.8rem;
   line-height: 1.7;
 }
+// 本文が1段落だけのブロックはテーマが <p> で囲まずに出力するため，p の指定が効かない．
+// 見出し以外の本文の入れ物にも同じ大きさを指定しておく
+.sim_examples_section .row > .col-12:not(.section-heading) {
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+// 長い別行立て数式がスマホ幅ではみ出さないよう，数式だけ横スクロールさせる
+.sim_examples_section mjx-container[display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 
 
 /* =========================================================

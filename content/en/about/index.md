@@ -38,7 +38,12 @@ sections:
 
         To begin with, study with the aim of being able to complete <a href="/lab_doc/Report01.pdf" target="_blank" rel="noopener">Assignment 1</a> in the first term of the third year.
 
-        Students who are considering joining the group are referred to our <a href="/en/research-examples/">simulation examples</a>.
+        Examples of our research are presented on the following pages.
+
+        - <a href="/en/ai-simulation/">Development of AI-based methods for physics simulation</a>
+        - <a href="/en/research-examples/">Simulation examples of fire, evacuation, and traffic flow</a>
+
+        For details, please see the <a href="/en/research/">research topics</a> page.
     design:
       columns: '1'
       css_class: research_section about_section

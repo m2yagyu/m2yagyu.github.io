@@ -48,6 +48,14 @@ taxonomies:
   author: authors
 markup:
   _merge: deep
+  goldmark:
+    extensions:
+      # 数式を Markdown 変換から保護し，MathJax にそのまま渡す（_ が <em> になるのを防ぐ）
+      passthrough:
+        enable: true
+        delimiters:
+          block: [['$$', '$$'], ['\[', '\]']]
+          inline: [['$', '$'], ['\(', '\)']]
 related:
   threshold: 80
   includeNewer: true
