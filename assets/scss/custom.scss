@@ -95,6 +95,12 @@ h2 {
     text-decoration: none !important;
     color: inherit !important
 }
+// title_md で書いたタイトル内リンクだけは有効にする
+.article-title .title-md a{
+    pointer-events: auto !important;
+    text-decoration: underline !important;
+    color: #3f5cc0 !important;
+}
 
 .article-container h1{
     font-size: 1rem !important;

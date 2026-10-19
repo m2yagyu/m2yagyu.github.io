@@ -29,6 +29,7 @@ sections:
         padding: ['15px','0','40px','0']
 
   - block: markdown
+    id: for-students
     content:
       title: 当研究室に少しでも興味がある学生
       text: |

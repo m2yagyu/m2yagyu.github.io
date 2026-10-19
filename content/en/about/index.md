@@ -29,6 +29,7 @@ sections:
         padding: ['15px','0','40px','0']
 
   - block: markdown
+    id: for-students
     content:
       title: For students with any interest in our group
       text: |
