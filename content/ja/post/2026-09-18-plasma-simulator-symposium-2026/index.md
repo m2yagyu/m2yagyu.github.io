@@ -1,8 +1,8 @@
 ---
-title: プラズマシミュレータシンポジウム2026にてポスター発表しました．（柳生）
+title: プラズマシミュレータシンポジウム2026（@岐阜 & Online）にてポスター発表しました．（柳生）
+title_md: '[プラズマシミュレータシンポジウム2026](https://indico.nifs.ac.jp/event/98/)（@岐阜 & Online）にてポスター発表しました．（柳生）'
 date: 2026-09-18
 authors: []
-external_link: 'https://indico.nifs.ac.jp/event/98/'
 profile: false
 links: []
 show_date: true
