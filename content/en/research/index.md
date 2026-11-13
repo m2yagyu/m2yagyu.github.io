@@ -9,7 +9,7 @@ sections:
       text: |
         ## Plasma physics
         - <a href="/en/microtearing/">Detailed analysis of the destabilization mechanism of the microtearing modes</a>
-        - Detailed analysis of the saturation mechanism of electromagnetic turbulence
+        - <a href="/en/self-organization/">Self-organization phenomena in electromagnetic turbulence driven by microtearing modes</a>
 
         ## <a href="/en/ai-simulation/">Simulation code development</a>
         - Development of a fast solution method for plasma instability eigenvalue problems with singular structures using neural networks
